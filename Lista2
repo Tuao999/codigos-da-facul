@@ -1,0 +1,101 @@
+a, b, c = input().split() 
+a = int(a) 
+b = int(b)
+c = int(c)
+if c >= a * b:
+    print("N")
+else:
+    print("S")
+    
+    ///////////////////////////////////////////////////////////
+    
+L1, P1 = input().split()
+L2, P2 = input().split()
+L3, P3 = input().split()
+L1 = int(L1)            
+L2 = int(L2)
+L3 = int(L3)
+P1 = int(P1)
+P2 = int(P2)
+P3 = int(P3)
+if L1 + L2 + L3 > P1 + P2 + P3:
+    print("Lucas")
+elif L1 + L2 + L3 == P1 + P2 + P3:
+    print("Empate")
+else:
+    print("Pedro")
+    
+    /////////////////////////////////////////////////////////
+   
+Xe, Ye = input().split()
+Xe = int(Xe)
+Ye = int(Ye) 
+Xd, Yd = input().split()
+Xd = int(Xd)
+Yd = int(Yd)
+if Xe == Xd and Ye == Yd:
+    print("Soltar pacote")
+else:
+    print("Nao soltar pacote") 
+    
+    /////////////////////////////////////////////////////////////
+    
+N = int(input())
+a = N / 3
+a = int(a)
+b = (N / 3) + 1
+b = int(b)
+if N % 3 == 0: 
+    print("Chapeuzinho Vermelho", a)  
+    print("Vovozinha", a) 
+    print("Lobo Mau", a) 
+elif N % 3 == 1:
+    print("Chapeuzinho Vermelho", b)
+    print("Vovozinha", a)
+    print("Lobo Mau", a)
+else:
+    print("Chapeuzinho Vermelho", b)
+    print("Vovozinha", b)
+    print("Lobo Mau", a)
+    
+    ///////////////////////////////////////////////////////////
+    
+z, g = str(input()).split()
+d, c = str(input()).split()
+if z == d:
+    print("Driblado")
+    if g != c:
+        print("...e o goleiro pega")
+    else:
+        print("Gol")
+else:
+    print("Bloqueado")
+    
+    ////////////////////////////////////////////////////////////////
+    
+A, D, P = input().split()
+A = int(A)
+D = int(D)
+P = int(P)
+x = (A + D + P) // 1.10
+
+if 0 <= x <= 50: 
+    print("Seu pokemon nao fara progresso em batalhas")
+elif 50 < x <= 66:
+    print("Seu pokemon esta acima da media")
+elif 66 < x <= 79:
+    print("Seu pokemon certamente me chamou atencao")
+elif 79 < x <= 100:
+    print("Seu pokemon e uma maravilha")
+else:
+    print("Hum, parece que houve um erro")   
+
+    
+    
+    
+
+
+    
+    
+        
+    
