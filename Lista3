@@ -1,0 +1,89 @@
+x = int(input())
+for N in range(0, 101):
+    y = N * x
+    print(y)
+    N = N + 1
+    
+    /////////////////////////////////////////////////////////////////////////////////////
+    
+n = int(input())
+soma1 = 0
+soma2 = 0
+for i in range(n):
+    x = int(input())
+    if x == 1:
+        soma1 = 1+soma1 
+    else:
+        soma2 = 1+soma2
+
+print(soma1)
+print(soma2)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+x, y = input().split()
+y = int(y)
+
+while y != 0:
+    if y < 90:
+        print(x, "Internar")
+        x, y = input().split()
+        y = int(y)
+    else:
+        print(x, "Alta")
+        x, y = input().split()
+        y = int(y)
+        
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+N = int(input())
+if 2 >= N:
+    print("Dattebayo")
+else:
+    while N/2 >= 0: 
+        N = N/2
+        N = float(N)
+        if N == 2:
+            print("Dattebayo")
+            break
+        elif N < 2:
+            print("Tururuuu")
+            break
+            
+ /////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+T = int(input())
+P = int(input())
+x = str("O Havai pode dormir tranquilo")
+while P > 0:
+    if P > T:
+        x = str("ALARME")
+        P = int(input())
+    else:
+        P = int(input())
+
+print(x)
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+a,b = input().split()
+a = int(a)
+b = int(b)
+soma = 0
+c = b + 1
+for i in range(a, c):
+    for j in range(2, b):
+        if(i%j == 0):
+            if i == j: 
+                break
+            else:
+                soma = soma + 1
+                break
+                
+print((c-a)-soma)
+
+#Perdi a versão simplificada do problema F, no entanto ela envolve true e false, muita coisa eh cortada e a soma fica alinhada com o segundo for 
+ 
+   
+   
+        
