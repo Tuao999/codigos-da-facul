@@ -1,0 +1,29 @@
+STRINGS
+AULA 8
+.upper() # Letra maíuscula 
+.lower() # Letra minúscula
+
+# É pssível utilizar o len() com strings 
+# É possível acessar elementos de uma string assim como é feito em listas ex:
+s = "pão de sal"
+print(s[2])
+# A letra printada seria "o" 
+# Outros exemplos
+print(s[4:13])
+print(s[:6])
+print(s[10:])
+print(s[::2])
+print(s[:6:1]) # Imprima de 1 em 1 até o caractere 6
+print(s[::-1])  # Imprima de trás para frente de 1 em 1 
+
+for a in s 
+print(a)
+
+.find
+.count
+
+list(s) #converte para uma lista, assim é possível alterar seus elementos
+""join(s) #coloca a lista dentro dessa sring vazia
+
+s2 = s.replace("sal", "batata")
+////////////////////////////////////////////////////////////////////////////////////
