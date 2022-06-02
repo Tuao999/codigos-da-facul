@@ -1,0 +1,82 @@
+N = int(input()) 
+E = [int(n) for n in input().split()]
+Ec = int(input())
+b = (-1)
+for a in E:
+    if a == Ec:
+        b = Ec
+        break
+print(b)
+///////////////////////////////////////////
+N = int(input())
+u = [int(a) for a in input().split()]
+v = [int(a) for a in input().split()]
+D = [int(a) for a in input().split()]
+d = [0] * N
+for i in range(N):
+    d[i] = u[i] + v[i]
+if d == D:
+    print("OK")
+else:
+    print("NOPE :(")
+/////////////////////////////////////////////////////
+N = int(input())
+Ln = [int(x) for x in input().split()]
+Lp = []
+Li = []
+for a in Ln: 
+    if (a % 2) == 0:
+        Lp.append(a)
+    else:
+        Li.append(a)
+print(*Lp, sep = " ")
+print(*Li, sep = " ")
+///////////////////////////////////////////////////////
+Sa, Pe = input().split()
+Sa = int(Sa)
+Pe = int(Pe)
+Lsa = [0] * Pe
+
+for x in range(Sa):
+    Pu = int(input())
+    pos = 0
+    while pos < len(Lsa):
+      Lsa[pos] = 1
+      pos += Pu
+
+print(*Lsa)
+/////////////////////////////////////////////////////
+Es = int(input())
+Nde = [int(x) for x in input().split()]
+
+Nde2 = [n for n in Nde if n <= 7]
+Nde2 = sorted(Nde2)
+print(*Nde2)
+
+if len(Nde2) < 7: 
+    print("Nao encontramos todas")
+else:
+    print("Saia Shenlong e realize o meu desejo")
+//////////////////////////////////////////////////////
+j = int(input())
+lda = [int(x) for x in input().split()]
+maxi = max(lda)
+l = [0] * (maxi + 1)
+
+for i in lda:
+    l[i] = 1
+    
+for i in range(len(l)):
+    if l[i] == 1:
+        print(i,end=" ")
+        
+        OU
+        
+Qj = int(input())
+Qa = [int(x) for x in input().split()]
+Qa = sorted(Qa)
+print(*Qa)
+////////////////////////////////////////////////////
+
+        
+
