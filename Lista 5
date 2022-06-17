@@ -1,0 +1,135 @@
+co = 10 
+lin = 10
+matriz = []
+P = int(input())
+c = "nao"
+for a in range(lin):
+    lista = [int(x) for x in input().split()]
+    for b in lista:
+        if b == P:
+            c = "sim"
+            break
+    matriz.append(lista)
+    
+print(c)
+//////////////////////////////////////////////////////////////////
+lin, col = input().split()
+lin = int(lin)
+col = int(col)
+matriz1 = []
+matriz2 = []
+matriz3 = [[0] * col for l in range(lin)]
+for a in range(lin):
+    lista1 = [int(x) for x in input().split()]
+    matriz1.append(lista1)
+for b in range(lin):
+    lista2 = [int(x) for x in input().split()]
+    matriz2.append(lista2)
+    
+for l in range(lin):
+    for c in range(col):
+        matriz3[l][c] = matriz1[l][c] - matriz2[l][c]
+        
+for j in range(lin):
+    print(*matriz3[j])
+///////////////////////////////////////////////////////////
+N, M = map(int, input().split())
+matriz = []
+Saída = "HASTA LA VISTA BABY"
+for a in range(N):
+    l = [int(x) for x in input().split()]
+    matriz.append(l)
+    
+A = int(input())
+
+for a in range(A):
+    L,C = map(int, input().split())
+    matriz[L-1][C-1] = 0
+   
+for a in range(N):
+    for b in range(M):
+        if matriz[a][b] == 1:
+            Saída = "ILL BE BACK"
+                
+print(Saída)
+////////////////////////////////////////////////////////////////
+N, M = map(int, input().split())
+matriz = []
+soma = 0 
+for a in range(N):
+    l = [int(x) for x in input().split()]
+    matriz.append(l)
+for a in range(N):
+    for b in range(M):
+        soma = soma + matriz[a][b] 
+        if soma < 0:
+            soma = 0
+    
+print(soma)
+////////////////////////////////////////////////////////////
+N, M = map(int, input().split())
+matriz = []
+soma = 0
+for a in range(N):
+    l = [int(b) for b in input().split()]
+    matriz.append(l)
+for a in range(M):
+    x, y = map(int, input().split())
+    linha_anterior = x
+    for a in range(x):
+        linha_anterior = linha_anterior + -1 
+        if matriz[linha_anterior][y] == 1:
+            matriz[linha_anterior][y] = 0
+            soma = soma + 1
+            break
+        
+    
+print(soma)
+/////////////////////////////////////////////////////
+matriz = []
+for x in range(10):
+    l = [x for x in input().split()]
+    matriz.append(l)
+for x in range(10):
+    for y in range(10):
+        if matriz[x][y] == "t":
+            
+            if x == 0:
+                if y == 0:
+                    if matriz[x+1][y] == "*" or matriz[x][y+1] == "*": #q
+                        matriz[x][y] = "p"
+                elif y != 0 and y != 9:
+                    if matriz[x][y-1] == "*" or matriz[x][y+1] == "*" or matriz[x+1][y] == "*":
+                        matriz[x][y] = "p"   
+                elif y == 9:
+                    if matriz[x+1][y] == "*" or matriz[x][y-1] == "*": #q
+                        matriz[x][y] = "p" 
+                        
+            if x == 9:
+                if y == 0:
+                    if matriz[x-1][y] == "*" or matriz[x][y+1] == "*": #q
+                        matriz[x][y] = "p"    
+                elif y != 0 and y != 9:
+                    if matriz[x][y-1] == "*" or matriz[x][y+1] == "*" or matriz[x-1][y] == "*":
+                        matriz[x][y] = "p"        
+                elif y == 9:
+                    if matriz[x-1][y] == "*" or matriz[x][y-1] == "*": #q
+                        matriz[x][y] = "p"
+                
+            if x != 0 and x != 9:
+                if y == 9:
+                    if matriz[x-1][y] == "*" or matriz[x+1][y] == "*" or matriz[x][y-1] == "*":
+                        matriz[x][y] = "p"
+                elif y == 0:
+                    if matriz[x-1][y] == "*" or matriz[x+1][y] == "*" or matriz[x][y+1] == "*":
+                        matriz[x][y] = "p"
+                else:
+                    if matriz[x-1][y] == "*" or matriz[x][y+1] == "*" or matriz[x+1][y] == "*" or matriz[x][y-1] == "*":
+                        matriz[x][y] = "p"
+            
+for linha in range(10):
+    print(*matriz[linha])
+
+
+
+
