@@ -1,0 +1,84 @@
+LISTA 06 (ORDENAÇÃO)
+//////////////////////////////////////////////////////////
+n = int(input())
+v = [int(x) for x in input().split()]
+
+for fim in range(n - 1, 0, -1):          
+    imaior = 0
+    for i in range(1, fim + 1):
+        if v[i] > v[imaior]:
+            imaior = i
+    v[imaior], v[fim] = v[fim], v[imaior]
+
+            
+print(*v[:8])
+/////////////////////////////////////////////////////////////
+Q = int(input())
+H = [int(x) for x in input().split()]
+M = [int(x) for x in input().split()]
+
+for fim in range(Q - 1, 0, -1):
+    for i in range(0, fim):
+        if H[i] < H[i+1]:
+            H[i], H[i+1] = H[i+1], H[i]
+            
+for fim in range(Q - 1, 0, -1):
+    for i in range(0, fim):
+        if M[i] > M[i+1]:
+            M[i], M[i+1] = M[i+1], M[i]
+            
+for i in range(Q):
+    print(H[i],M[i])
+    ////////////////////////////////////////////////////////////
+
+N = int(input())
+l = []
+for i in range(N):
+   ident, grau  = input().split()
+   l.append({"ident": int(ident),
+             "grau": int(grau)})
+             
+for fim in range(N - 1, 0, -1):
+    for i in range(0, fim):
+        if l[i]["grau"] < l[i+1]["grau"]:
+            l[i], l[i+1] = l[i+1], l[i]
+            
+for i in l:
+    print(i["ident"], i["grau"])
+//////////////////////////////////////////////////////////////////////////
+a,b,c = input().split()
+a = int(a)
+lista = []
+
+for i in range(a):
+    nome, nivel = input().split()
+    nivel = int(nivel)
+    lista.append({"nome":nome, "nivel":nivel})
+    
+if b == "N" and c == "C":
+    for fim in range(a - 1, 0, -1):
+        for i in range(0, fim):
+            if lista[i]["nome"] > lista[i+1]["nome"]:
+                lista[i], lista[i+1] = lista[i+1], lista[i]
+    
+elif b == "N" and c == "D":
+    for fim in range(a - 1, 0, -1):
+        for i in range(0, fim):
+            if lista[i]["nome"] < lista[i+1]["nome"]:
+                lista[i], lista[i+1] = lista[i+1], lista[i]
+    
+elif b == "L" and c == "C":
+    for fim in range(a - 1, 0, -1):
+        for i in range(0, fim):
+            if lista[i]["nivel"] > lista[i+1]["nivel"]:
+                lista[i], lista[i+1] = lista[i+1], lista[i]
+    
+else:
+    for fim in range(a - 1, 0, -1):
+        for i in range(0, fim):
+            if lista[i]["nivel"] < lista[i+1]["nivel"]:
+                lista[i], lista[i+1] = lista[i+1], lista[i]
+for i in lista:
+    print(i["nome"], i["nivel"])
+
+
