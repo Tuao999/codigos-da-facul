@@ -80,5 +80,170 @@ else:
                 lista[i], lista[i+1] = lista[i+1], lista[i]
 for i in lista:
     print(i["nome"], i["nivel"])
+//////////////////////////////////////////////////////////////////////////
+LISTA 6 (BUSCA BINÁRIA) 
+
+n = int(input())
+v = [int(x) for x in input().split()]
+
+for fim in range(n - 1, 0, -1):          
+    imaior = 0
+    for i in range(1, fim + 1):
+        if v[i] > v[imaior]:
+            imaior = i
+    v[imaior], v[fim] = v[fim], v[imaior]
+
+            
+print(*v[:8])
+/////////////////////////////////////////////////////////////////////
+
+Q = int(input())
+H = [int(x) for x in input().split()]
+M = [int(x) for x in input().split()]
+
+for fim in range(Q - 1, 0, -1):
+    for i in range(0, fim):
+        if H[i] < H[i+1]:
+            H[i], H[i+1] = H[i+1], H[i]
+            
+for fim in range(Q - 1, 0, -1):
+    for i in range(0, fim):
+        if M[i] > M[i+1]:
+            M[i], M[i+1] = M[i+1], M[i]
+            
+for i in range(Q):
+    print(H[i],M[i])
+////////////////////////////////////////////////////////////////////
+
+N = int(input())
+l = []
+for i in range(N):
+   ident, grau  = input().split()
+   l.append({"ident": int(ident),
+             "grau": int(grau)})
+             
+for fim in range(N - 1, 0, -1):
+    for i in range(0, fim):
+        if l[i]["grau"] < l[i+1]["grau"]:
+            l[i], l[i+1] = l[i+1], l[i]
+            
+for i in l:
+    print(i["ident"], i["grau"])
+/////////////////////////////////////////////////////////////////////////
+a,b,c = input().split()
+a = int(a)
+lista = []
+
+for i in range(a):
+    nome, nivel = input().split()
+    nivel = int(nivel)
+    lista.append({"nome":nome, "nivel":nivel})
+    
+if b == "N":
+    if c == "C":
+        for fim in range(a - 1, 0, -1):
+            for i in range(0, fim):
+                if lista[i]["nome"] > lista[i+1]["nome"]:
+                    lista[i], lista[i+1] = lista[i+1], lista[i]
+    else:
+        for fim in range(a - 1, 0, -1):
+            for i in range(0, fim):
+                if lista[i]["nome"] < lista[i+1]["nome"]:
+                    lista[i], lista[i+1] = lista[i+1], lista[i]
+else:
+    if c == "C":
+        for fim in range(a - 1, 0, -1):
+            for i in range(0, fim):
+                if lista[i]["nivel"] > lista[i+1]["nivel"]:
+                    lista[i], lista[i+1] = lista[i+1], lista[i]
+    else:
+        for fim in range(a - 1, 0, -1):
+            for i in range(0, fim):
+                if lista[i]["nivel"] < lista[i+1]["nivel"]:
+                    lista[i], lista[i+1] = lista[i+1], lista[i]
+for i in lista:
+    print(i["nome"], i["nivel"])
+    
+//////////////////////////////////////////////////////////////////////////////////
+n = int(input())
+v = [int(x) for x in input().split()]
+listaelem = [int(y) for y in input().split()]
+
+for elem in listaelem:
+    esq = 0
+    dir = n - 1
+    
+    while esq <= dir:
+       meio = (esq + dir) // 2
+       if v[meio] == elem:
+           break
+       elif elem < v[meio]:
+           dir = meio - 1
+       else:
+           esq = meio + 1
+    
+    if v[meio] == elem:
+       print(meio)
+    elif elem == 0:
+        break
+    else:
+       print("Nao foi visitado ainda.")
+       
+/////////////////////////////////////////////////////////////
+Qs,Qc = map(int,input().split())
+cand = [[int(i) for i in input().split()] for j in range(Qc)]
+
+for fim in range(Qc - 1, 0, -1):
+    for i in range(0, fim):
+        if cand[i] < cand[i+1]:
+            cand[i], cand[i+1] = cand[i+1], cand[i]
+            
+for i in range(Qc-1):
+    for j in range(i+1,Qc):
+        if cand[i][0] == cand[j][0] and cand[i][1] > cand[j][1]:
+            aux = cand[i]
+            cand[i] = cand[j]
+            cand[j] = aux
+            
+consulta = int(input())
+
+for i in range(consulta):
+    candidato = list(map(int,input().split()))
+    if candidato >= cand[Qs-1]:
+        print("Sim")
+    else:
+        print("Nao")
+//////////////////////////////////////////////////////////////////
+Qp = int(input())
+Lp = [i for i in input().split()]
+Qpt = int(input())
+Lpt = [j for j in input().split()]
+Lipt = [0]
+
+for i in range(Qpt):
+    elem = Lpt[i]
+    esq = 0
+    dir = Qp - 1
+    while esq <= dir:
+       meio = (esq + dir) // 2
+       if Lp[meio] == elem:
+           break
+       elif elem < Lp[meio]:
+           dir = meio - 1
+       else:
+           esq = meio + 1
+           
+    Lipt.append(meio)
+    
+matriz = []
+soma = 0
+for i in range(Qp):
+    l = [int(j) for j in input().split()]
+    matriz.append(l)
+    
+for i in range(Qpt):
+    soma = soma + matriz[Lipt[i]][Lipt[i+1]]
+    
+print(soma)
 
 
